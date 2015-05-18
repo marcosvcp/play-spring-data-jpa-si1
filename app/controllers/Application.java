@@ -78,7 +78,8 @@ public class Application extends Controller {
 
 	public Result addAutor(Long id, String nome) {
 		criaAutorDoLivro(id, nome);
-		return ok(views.html.index.render(firstPage(), bookForm));
+		return redirect(routes.Application.books(FIRST_PAGE,
+				DEFAULT_RESULTS));
 	}
 
 	private void criaAutorDoLivro(Long id, String nome) {
